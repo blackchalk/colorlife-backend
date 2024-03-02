@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2024-03-02T10:49:00Z"
+  labels:
+    kubernetes.io/metadata.name: default
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:kubernetes.io/metadata.name: {}
+    manager: k3s
+    operation: Update
+    time: "2024-03-02T10:49:00Z"
+  name: default
+  resourceVersion: "38"
+  uid: 61565600-d68f-464a-bae7-45095c8fb6f6
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: colorlife-container
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: colorlife-container
+ template:
+   metadata:
+     labels:
+       app: colorlife-backend
+   spec:
+     containers:
+     - name: colorlife-container
+       image: colorlife-backend
+       resources:
+          limits:
+            memory: 128Mi
+            cpu: 500m
+       ports:
+       - containerPort: 5002
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: colorlife-svc
+spec:
+  selector:
+    app: colorlife-svc
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5002
+    targetPort: 5002

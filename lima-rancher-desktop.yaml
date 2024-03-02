@@ -1,0 +1,214 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    alpha.kubernetes.io/provided-node-ip: 192.168.5.15
+    flannel.alpha.coreos.com/backend-data: '{"VNI":1,"VtepMAC":"fe:f3:fb:ee:12:4f"}'
+    flannel.alpha.coreos.com/backend-type: vxlan
+    flannel.alpha.coreos.com/kube-subnet-manager: "true"
+    flannel.alpha.coreos.com/public-ip: 192.168.5.15
+    k3s.io/external-ip: 192.168.5.15
+    k3s.io/hostname: lima-rancher-desktop
+    k3s.io/internal-ip: 192.168.5.15
+    k3s.io/node-args: '["server","--https-listen-port","6443","--node-ip","192.168.5.15","--flannel-iface","eth0","--node-external-ip","192.168.5.15","--docker"]'
+    k3s.io/node-config-hash: 2HESZ5AAENZCAFENKHUF2OXDEFPCHFVEKLT4U3VJ5XJKPTVWID2A====
+    k3s.io/node-env: '{"K3S_DATA_DIR":"/var/lib/rancher/k3s/data/a3b46c0299091b71bfcc617b1e1fec1845c13bdd848584ceb39d2e700e702a4b"}'
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2024-03-02T10:49:04Z"
+  finalizers:
+  - wrangler.cattle.io/node
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/instance-type: k3s
+    beta.kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: lima-rancher-desktop
+    kubernetes.io/os: linux
+    node-role.kubernetes.io/control-plane: "true"
+    node-role.kubernetes.io/master: "true"
+    node.kubernetes.io/instance-type: k3s
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"wrangler.cattle.io/node": {}
+        f:labels:
+          f:node-role.kubernetes.io/control-plane: {}
+          f:node-role.kubernetes.io/master: {}
+    manager: k3s-supervisor@lima-rancher-desktop
+    operation: Update
+    time: "2024-03-02T10:49:08Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:alpha.kubernetes.io/provided-node-ip: {}
+          f:k3s.io/external-ip: {}
+          f:k3s.io/hostname: {}
+          f:k3s.io/internal-ip: {}
+          f:k3s.io/node-args: {}
+          f:k3s.io/node-config-hash: {}
+          f:k3s.io/node-env: {}
+          f:node.alpha.kubernetes.io/ttl: {}
+          f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+        f:labels:
+          .: {}
+          f:beta.kubernetes.io/arch: {}
+          f:beta.kubernetes.io/instance-type: {}
+          f:beta.kubernetes.io/os: {}
+          f:kubernetes.io/arch: {}
+          f:kubernetes.io/hostname: {}
+          f:kubernetes.io/os: {}
+          f:node.kubernetes.io/instance-type: {}
+      f:spec:
+        f:podCIDR: {}
+        f:podCIDRs:
+          .: {}
+          v:"10.42.0.0/24": {}
+        f:providerID: {}
+    manager: k3s
+    operation: Update
+    time: "2024-03-02T10:49:37Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:flannel.alpha.coreos.com/backend-data: {}
+          f:flannel.alpha.coreos.com/backend-type: {}
+          f:flannel.alpha.coreos.com/kube-subnet-manager: {}
+          f:flannel.alpha.coreos.com/public-ip: {}
+      f:status:
+        f:addresses:
+          k:{"type":"ExternalIP"}:
+            .: {}
+            f:address: {}
+            f:type: {}
+        f:allocatable:
+          f:ephemeral-storage: {}
+        f:conditions:
+          k:{"type":"DiskPressure"}:
+            f:lastHeartbeatTime: {}
+          k:{"type":"MemoryPressure"}:
+            f:lastHeartbeatTime: {}
+          k:{"type":"PIDPressure"}:
+            f:lastHeartbeatTime: {}
+          k:{"type":"Ready"}:
+            f:lastHeartbeatTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+        f:images: {}
+    manager: k3s
+    operation: Update
+    subresource: status
+    time: "2024-03-02T11:49:07Z"
+  name: lima-rancher-desktop
+  resourceVersion: "1746"
+  uid: da54c6d5-5d70-49c5-8476-638cadd5e959
+spec:
+  podCIDR: 10.42.0.0/24
+  podCIDRs:
+  - 10.42.0.0/24
+  providerID: k3s://lima-rancher-desktop
+status:
+  addresses:
+  - address: 192.168.5.15
+    type: InternalIP
+  - address: 192.168.5.15
+    type: ExternalIP
+  - address: lima-rancher-desktop
+    type: Hostname
+  allocatable:
+    cpu: "2"
+    ephemeral-storage: "99833802265"
+    hugepages-2Mi: "0"
+    memory: 6079408Ki
+    pods: "110"
+  capacity:
+    cpu: "2"
+    ephemeral-storage: 102625208Ki
+    hugepages-2Mi: "0"
+    memory: 6079408Ki
+    pods: "110"
+  conditions:
+  - lastHeartbeatTime: "2024-03-02T11:49:07Z"
+    lastTransitionTime: "2024-03-02T10:49:04Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2024-03-02T11:49:07Z"
+    lastTransitionTime: "2024-03-02T10:49:04Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2024-03-02T11:49:07Z"
+    lastTransitionTime: "2024-03-02T10:49:04Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2024-03-02T11:49:07Z"
+    lastTransitionTime: "2024-03-02T10:49:05Z"
+    message: kubelet is posting ready status
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - rancher/server@sha256:95b55603122c28baea4e8d94663aa34ad770bbc624a9ed6ef986fb3ea5224d91
+    - rancher/server:latest
+    sizeBytes: 1083177004
+  - names:
+    - rancher/klipper-helm:v0.8.2-build20230815
+    sizeBytes: 255745590
+  - names:
+    - rancher/mirrored-library-traefik:2.10.5
+    sizeBytes: 151426551
+  - names:
+    - colorlife-backend:latest
+    sizeBytes: 142403837
+  - names:
+    - rancher/mirrored-metrics-server:v0.6.3
+    sizeBytes: 68878702
+  - names:
+    - rancher/mirrored-coredns-coredns:1.10.1
+    sizeBytes: 53612153
+  - names:
+    - rancher/local-path-provisioner:v0.0.26
+    sizeBytes: 48425740
+  - names:
+    - rancher/klipper-lb:v0.4.5
+    sizeBytes: 18340387
+  - names:
+    - ghcr.io/rancher-sandbox/rancher-desktop/rdx-proxy:latest
+    sizeBytes: 5111808
+  - names:
+    - rancher/mirrored-library-busybox:1.36.1
+    sizeBytes: 4261566
+  - names:
+    - rancher/mirrored-pause:3.6
+    sizeBytes: 682696
+  nodeInfo:
+    architecture: amd64
+    bootID: 9b21a699-4f31-40f4-ac36-ad19899ae3a9
+    containerRuntimeVersion: docker://23.0.6
+    kernelVersion: 6.1.75-0-virt
+    kubeProxyVersion: v1.28.7+k3s1
+    kubeletVersion: v1.28.7+k3s1
+    machineID: 1025f465759f9f35ef877dfb0613c0dc
+    operatingSystem: linux
+    osImage: Alpine Linux v3.18
+    systemUUID: 1025f465759f9f35ef877dfb0613c0dc
